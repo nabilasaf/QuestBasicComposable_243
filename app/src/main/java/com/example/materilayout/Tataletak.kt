@@ -1,4 +1,5 @@
 package com.example.materilayout
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -14,8 +15,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun TataletakColumn(modifier: Modifier) {
@@ -117,6 +122,25 @@ fun TataletakBoxColumnRow(modifier: Modifier) {
                 }
             }
             Spacer(modifier = Modifier.height(height = 10.dp))
+            Box(
+                modifier = modifier
+                    .fillMaxWidth()
+                    .height(height = 300.dp)
+                    .background(color = Color.Cyan),
+                contentAlignment = Alignment.Center
+            ){
+                Image(painter = gambar,
+                    contentDescription = null,
+                    contentScale = ContentScale.Fit)
+                Text(text = "My Music",
+                    fontSize = 50.sp,
+                    color = Color.Blue,
+                    fontWeight = FontWeight.Bold,
+                    fontFamily = FontFamily.Cursive,
+                    modifier= modifier.align (
+                        alignment = Alignment.Center))
+
+            }
         }
     }
 }
